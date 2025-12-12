@@ -23,15 +23,22 @@
 	/* On génère et on affiche notre page HTML avec la liste de nos films */
 	echo "<!DOCTYPE html>\n";		//On demande un saut de ligne avec \n, seulement avec " et pas '
 	echo "<html lang=\"fr\"><head><meta charset=\"UTF-8\">\n";	//Avec " on est obligé d'échapper les " a afficher avec \
-	echo "<title>Liste des couloirs</title>\n";
+	echo "<title>Labyrinthe</title>\n";
 	echo "</head>\n";
 	
 	echo "<body>\n";
-	echo "<h1>Liste des couloirs</h1>\n";
+	echo "<h1>Jeu du Labyrinthe : Trouvez la sortie!</h1>\n";
+	echo "<h2>Règle du jeu:</h2>";
+	echo "<p>		
+				Le but du jeu est simple, il vous suffit de trouver la sortie 
+				en vous déplacant dans les couloirs.
+			</p>";
+	echo "<p>
+				Attention! Il y a des clés à récupérer pour pouvoir passer dans certaines portes.
+				</p>";
 	echo "<ul>";
-	while($couloir = $result -> fetchArray(SQLITE3_ASSOC)) {
-		echo '<li>'.$couloir['id']." (type : {$couloir['type']})</li>";
-	}
+	
+	
 	echo "</ul>";
 	echo "</body>\n";
 	echo "</html>\n";
